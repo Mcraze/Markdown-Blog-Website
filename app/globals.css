@@ -20,8 +20,12 @@
 }
 
 body {
-  font-family: var(--font-geist-mono);
+  font-family: var(--font-geist-sans);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
+  font-variation-settings: normal;
+  font-feature-settings: normal;
+  font-kerning: normal;
+  letter-spacing: normal;
 }
