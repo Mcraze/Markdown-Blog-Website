@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
+import ThemeToggle from "./ThemeToggle";
 
 const menuLinks = [
     { name: "Blog", href: "/blog" },
@@ -28,6 +29,7 @@ const Header = () => {
                             </li>
                         ))
                     }
+                    <ThemeToggle />
                 </ul>
                 <button onClick={() => setIsOpen(!isOpen)} className="block sm:hidden cursor-pointer">
                     {isOpen ? <X /> : <Menu />}
@@ -42,6 +44,7 @@ const Header = () => {
                                     </li>
                                 ))
                             }
+                            <ThemeToggle />
                         </ul>
                     )
                 }
