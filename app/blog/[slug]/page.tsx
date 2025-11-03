@@ -9,18 +9,17 @@ export async function generateStaticParams() {
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
-    const { slug } = await params; // ✅ await here
+    const { slug } = await params;
     const post = await getPostData(slug);
 
     return (
         <>
-            <Section>
-                <article>
-                    <h1>{post.title}</h1>
-                    <p className="text-sm text-gray-500">{post.date}</p>
-                    <section dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-                </article>
-            </Section>
+            <article className="max-w-4xl p-4 mx-auto">
+                <h1 className="text-2xl sm:text-4xl lg:text-5xl lg:text-center md:leading-snug">{post.title}</h1>
+                {post.image && <img src={post.image} alt={post.title} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />}
+                <p className="text-sm text-gray-500">{post.date}</p>
+                <section className="article-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
+            </article>
         </>
     );
 }
