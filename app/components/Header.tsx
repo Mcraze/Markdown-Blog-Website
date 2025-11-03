@@ -7,8 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const menuLinks = [
     { name: "Blog", href: "/blog" },
-    { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "Portfolio", href: "https://mitesh-adelkar.netlify.app/" },
 ];
 
 const Header = () => {

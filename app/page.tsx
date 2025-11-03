@@ -1,10 +1,22 @@
+import Link from "next/link";
 import Section from "./components/Section";
 
 export default function Home() {
   return (
     <>
       <Section>
-        <h1>This is a heading</h1>
+        <div className="min-h-[calc(100svh-156px)] flex flex-col justify-center items-center gap-6">
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center">Frontend Development</h1>
+          <p className="text-center text-lg sm:text-xl max-w-lg">A Simple Blog Website that fetches and renders blog content through <strong>Markdown.md</strong> files</p>
+          <div className="w-full justify-center flex flex-col sm:flex-row gap-2">
+            <a href="https://mitesh-adelkar.netlify.app/">
+              <button className="w-full bg-zinc-200 px-8 py-4 border-2 border-zinc-300 rounded-full cursor-pointer dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition">Visit Portfolio</button>
+            </a>
+            <Link href="/blog">
+              <button className="w-full bg-amber-400 px-8 py-4 rounded-full border-2 border-transparent cursor-pointer dark:bg-amber-600 hover:bg-amber-500 transition">Explore Blogs</button>
+            </Link>
+          </div>
+        </div>
       </Section>
     </>
   );
