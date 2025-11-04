@@ -4,7 +4,7 @@ description: "A complete styling guide to this website to help you structure and
 date: "05-11-2025"
 author: "Mitesh Adelkar"
 categories: ["Next Js", "UI Design", "Frontend"]
-image: "/blog-images/post-1-image.jpg"
+image: "/blog-images/post-1-image.webp"
 ---
 
 Welcome to this blog on **creating beautiful blog layouts in Next.js**.  
@@ -64,7 +64,7 @@ Blockquotes help highlight key insights, design philosophies, or quotes you want
 ## Visuals and Images
 Adding visuals helps explain concepts better and break up long paragraphs.
 
-![Frontend Illustration](/blog-images/programming-panaromic.jpg "Frontend Design")
+![Frontend Illustration](/blog-images/programming-image.webp "Frontend Design")
 
 Make sure images are stored in `/public/blog-images` for easy static serving in Next.js.
 
