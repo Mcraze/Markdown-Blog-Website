@@ -1,5 +1,6 @@
 import Section from "@/app/components/Section";
 import { getAllPosts, getPostData } from "../../lib/posts";
+import Image from "next/image";
 
 export async function generateStaticParams() {
     const posts = getAllPosts();
@@ -23,7 +24,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         </span>
                     ))}
                 </div>
-                {post.image && <img src={post.image} alt={post.title} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />}
+                {post.image && <Image src={post.image} alt={post.title} width={400} height={240} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />}
                 <section className="article-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
                 <p className="text-sm text-gray-500">{post.date}</p>
             </article>
