@@ -30,40 +30,61 @@ body {
 
 @layer components {
 
+  .btn-primary {
+    @apply w-full bg-blue-500 text-white px-8 py-4 rounded-full border-2 border-transparent cursor-pointer transition
+  }
+
+  .btn-secondary {
+    @apply w-full bg-zinc-200 px-8 py-4 border-2 border-zinc-300 rounded-full cursor-pointer dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition
+  }
+
   .article-content h1 {
-    @apply text-2xl my-2
+    @apply text-2xl sm:text-4xl
   }
 
   .article-content h2 {
-    @apply text-2xl my-2
+    @apply text-2xl sm:text-3xl mt-6 mb-2 dark:text-emerald-400
   }
 
   .article-content h3 {
-    @apply text-xl my-2
+    @apply text-xl sm:text-2xl mb-2
+  }
+
+  .article-content h4 {
+    @apply text-lg sm:text-xl mb-2
   }
 
   .article-content blockquote {
-    @apply border border-l-3 border-l-sky-500 border-zinc-200 p-4 pb-0 bg-zinc-100
+    @apply border border-l-3 border-l-sky-500 border-zinc-200 p-4 pb-0 mb-4 bg-zinc-100
   }
 
   .article-content hr {
-    @apply border-zinc-200 my-2
+    @apply border-transparent my-4
   }
 
   .article-content ul {
-    @apply list-disc list-inside leading-relaxed
+    @apply list-disc list-outside ml-4 leading-relaxed mb-4
+  }
+
+  .article-content li ul,
+  .article-content li ol {
+    @apply mb-0
   }
 
   .article-content ol {
-    @apply list-decimal list-inside leading-relaxed
+    @apply list-decimal list-outside ml-4 leading-relaxed mb-4
   }
 
   .article-content pre {
     @apply bg-zinc-100 border border-zinc-200 text-wrap p-4 text-sm leading-relaxed
   }
 
+  .article-content :not(pre) code {
+    @apply bg-zinc-200/70 dark:bg-zinc-800 p-1
+  }
+
   .article-content p {
-    @apply leading-relaxed pb-4
+    @apply leading-relaxed mb-4
   }
 
   .article-content strong {
@@ -72,6 +93,10 @@ body {
 
   .article-content a {
     @apply text-green-500 underline underline-offset-2
+  }
+
+  .article-content img {
+    @apply w-full
   }
 
 }

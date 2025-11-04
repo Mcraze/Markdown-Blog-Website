@@ -10,7 +10,14 @@ export function getAllPosts() {
     const posts = fs.readdirSync(postDirectory).map((file) => {
         const slug = file.replace(".md", "");
         const { data } = matter(fs.readFileSync(path.join(postDirectory, file), "utf8"));
-        return { slug, ...data } as { slug: string, title: string, date: string, image: string  };
+        return { slug, ...data } as {
+            slug: string,
+            title: string,
+            description: string,
+            date: string,
+            author: string,
+            image: string
+        };
     });
 
     return posts.sort(
@@ -29,8 +36,11 @@ export async function getPostData(slug: string) {
     } as {
         slug: string,
         title: string,
+        description: string,
         date: string,
+        author: string,
         image: string,
+        categories: string[],
         contentHtml: string
     };
 }

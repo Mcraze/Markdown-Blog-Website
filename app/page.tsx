@@ -10,10 +10,10 @@ export default function Home() {
           <p className="text-center text-lg sm:text-xl max-w-lg">A Simple Blog Website that fetches and renders blog content through <strong>Markdown.md</strong> files</p>
           <div className="w-full justify-center flex flex-col sm:flex-row gap-2">
             <a href="https://mitesh-adelkar.netlify.app/">
-              <button className="w-full bg-zinc-200 px-8 py-4 border-2 border-zinc-300 rounded-full cursor-pointer dark:bg-zinc-800 hover:bg-zinc-100 dark:hover:bg-zinc-700 transition">Visit Portfolio</button>
+              <button className="btn-secondary">Visit Portfolio</button>
             </a>
             <Link href="/blog">
-              <button className="w-full bg-amber-400 px-8 py-4 rounded-full border-2 border-transparent cursor-pointer dark:bg-amber-600 hover:bg-amber-500 transition">Explore Blogs</button>
+              <button className="btn-primary">Explore Blogs</button>
             </Link>
           </div>
         </div>
