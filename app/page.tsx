@@ -9,8 +9,8 @@ export default function Home() {
           <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center">Frontend Development</h1>
           <p className="text-center text-lg sm:text-xl max-w-lg">A Simple Blog Website that fetches and renders blog content through <strong>Markdown.md</strong> files</p>
           <div className="w-full justify-center flex flex-col sm:flex-row gap-2">
-            <a href="https://mitesh-adelkar.netlify.app/">
-              <button className="btn-secondary">Visit Portfolio</button>
+            <a href="https://github.com/Mcraze/Markdown-Blog-Website">
+              <button className="btn-secondary">Github Repo</button>
             </a>
             <Link href="/blog">
               <button className="btn-primary">Explore Blogs</button>

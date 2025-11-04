@@ -1,10 +1,11 @@
 'use client';
 
-import { useState, useMemo } from "react";
-import Link from "next/link";
-import { ArrowUpRight, Search } from "lucide-react";
 import Section from "./Section";
 import Image from "next/image";
+import DefaultImage from "@/public/default-image.webp";
+import Link from "next/link";
+import { useState, useMemo } from "react";
+import { ArrowUpRight, Search } from "lucide-react";
 
 const POSTS_PER_PAGE = 3;
 
@@ -49,7 +50,9 @@ export default function BlogList({ posts }: { posts: any[] }) {
                             <article className="overflow-clip group">
                                 <div className="overflow-hidden border rounded-lg max-h-60 min-h-60">
                                     {
-                                        post.image && <Image src={post.image} alt={post.title} width={400} height={240} className="h-60 object-cover w-full group-hover:scale-105 transition-transform" />
+                                        post.image
+                                            ? <Image src={post.image} alt={post.title} width={400} height={240} placeholder="blur" blurDataURL="/default-image-blurred.webp" loading="lazy" className="h-60 object-cover w-full group-hover:scale-105 transition-transform" />
+                                            : <Image src={DefaultImage} alt="Default Image" placeholder="blur" loading="lazy" width={400} height={240} className="h-60 object-cover w-full group-hover:scale-105 transition-transform" />
                                     }
                                 </div>
                                 <div className="py-4 grid gap-2">

@@ -7,6 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 
 const menuLinks = [
     { name: "Blog", href: "/blog" },
+    { name: "GitHub", href: "https://github.com/Mcraze/Markdown-Blog-Website" },
     { name: "Portfolio", href: "https://mitesh-adelkar.netlify.app/" },
 ];
 
