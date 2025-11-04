@@ -1,8 +1,9 @@
 # 🧾 BlogSite - Next Js and Tailwind
 
 ### About this Project:
-A modern, minimal, and fast blog website built using **Next.js 14+ (App Router)**, **TypeScript**, and **Tailwind CSS**.  
-It reads Markdown files with frontmatter and generates statically rendered blog pages with responsive design and smooth UI.
+BlogSite is a Next.js-based website built to explore how markdown files can be transformed into fully functional blog posts. The goal behind creating this project was to understand the process of working with static content, rendering markdown dynamically, and structuring a simple yet efficient blogging system using modern frontend tools.
+
+The website is built with TypeScript and styled using Tailwind CSS, focusing on clean design, performance, and readability. Each post is generated from markdown files containing metadata like title, author, date, and categories. This setup makes it easy to create, organize, and manage blogs without the need for a database, keeping everything lightweight and developer-friendly.
 
 ### Tech Stack used:
 [![My Skills](https://skillicons.dev/icons?i=vite,next,tailwindcss)](https://skillicons.dev)
@@ -41,8 +42,7 @@ npm run dev
 - The parsed metadata (title, date, image, etc.) populates the blog listing page.
 - Each post is statically generated using its slug at build time.
 
-### Author Information
-🧑‍💻 Mitesh Adelkar  
-Frontend Developer passionate about building clean, performant, and dynamic UIs.
+### Author: Mitesh Adelkar  
+Frontend Developer with 2+ years of experience building responsive user interfaces using React JS, HTML, CSS and JavaScript. Skilled in translating Figma designs into functional layouts, optimizing performance, and writing clean, maintainable code. Experienced in team collaboration and leading frontend projects.
 
-Connect on [LinkedIn]("https://www.linkedin.com/in/mitesh23/")
+Let's connect on [LinkedIn](https://www.linkedin.com/in/mitesh23/)
