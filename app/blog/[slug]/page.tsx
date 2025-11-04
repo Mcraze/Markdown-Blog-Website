@@ -1,4 +1,5 @@
-import Section from "@/app/components/Section";
+import Image from "next/image";
+import DefaultImage from "@/public/default-image.webp";
 import { getAllPosts, getPostData } from "../../lib/posts";
 
 export async function generateStaticParams() {
@@ -23,9 +24,17 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         </span>
                     ))}
                 </div>
-                {post.image && <img src={post.image} alt={post.title} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />}
+                {
+                    post.image
+                        ? <Image src={post.image} alt={post.title} width={400} height={240} placeholder="blur" blurDataURL="/default-image-blurred.webp" className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />
+                        : <Image src={DefaultImage} alt="Default Image" placeholder="blur" width={400} height={240} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />
+                }
                 <section className="article-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-                <p className="text-sm text-gray-500">{post.date}</p>
+                <div className="border-t mt-10 mb-2 border-neutral-300 dark:border-neutral-700"></div>
+                <div className="flex justify-between">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">{post.date}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Posted by {post.author}</p>
+                </div>
             </article>
         </>
     );
