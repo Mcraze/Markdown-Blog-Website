@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧾 BlogSite - Next Js and Tailwind
 
-## Getting Started
+### About this Project:
+BlogSite is a Next.js-based website built to explore how markdown files can be transformed into fully functional blog posts. The goal behind creating this project was to understand the process of working with static content, rendering markdown dynamically, and structuring a simple yet efficient blogging system using modern frontend tools.
 
-First, run the development server:
+The website is built with TypeScript and styled using Tailwind CSS, focusing on clean design, performance, and readability. Each post is generated from markdown files containing metadata like title, author, date, and categories. This setup makes it easy to create, organize, and manage blogs without the need for a database, keeping everything lightweight and developer-friendly.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Tech Stack used:
+[![My Skills](https://skillicons.dev/icons?i=vite,next,tailwindcss)](https://skillicons.dev)
+
+### Website Features:
+- Next.js App Router with static generation  
+- Markdown-based posts using `gray-matter` and `remark`  
+- Optimized images with `next/image`  
+- Dynamic blogs listing with pagination
+- Blog search feature - compatible with pagination
+- Dark / Light Theme toggle for user comfort
+
+### Live Demo Link:
+https://markdown-blog-website.vercel.app
+
+### Setup and Installation:
+
+#### Clone this Repository
+```
+git clone https://github.com/Mcraze/Markdown-Blog-Website.git
+git cd Markdown-Blog-Website
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Install dependencies
+```
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#### Run the development server
+```
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### How it Works?
+- All Markdown files in `/content/posts` are parsed using `gray-matter` and `remark`.
+- The parsed metadata (title, date, image, etc.) populates the blog listing page.
+- Each post is statically generated using its slug at build time.
 
-## Learn More
+### Author: Mitesh Adelkar  
+Frontend Developer with 2+ years of experience building responsive user interfaces using React JS, HTML, CSS and JavaScript. Skilled in translating Figma designs into functional layouts, optimizing performance, and writing clean, maintainable code. Experienced in team collaboration and leading frontend projects.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Let's connect on [LinkedIn](https://www.linkedin.com/in/mitesh23/)
