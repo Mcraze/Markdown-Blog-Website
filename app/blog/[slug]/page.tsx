@@ -26,7 +26,11 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 </div>
                 {post.image && <Image src={post.image} alt={post.title} width={400} height={240} className="rounded-lg my-6 md:my-10 max-w-4xl w-full mx-auto" />}
                 <section className="article-content" dangerouslySetInnerHTML={{ __html: post.contentHtml }} />
-                <p className="text-sm text-gray-500">{post.date}</p>
+                <div className="border-t mt-10 mb-2 border-neutral-300 dark:border-neutral-700"></div>
+                <div className="flex justify-between">
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">{post.date}</p>
+                    <p className="text-sm text-neutral-600 dark:text-neutral-300">Posted by {post.author}</p>
+                </div>
             </article>
         </>
     );

@@ -6,7 +6,7 @@ import { ArrowUpRight, Search } from "lucide-react";
 import Section from "./Section";
 import Image from "next/image";
 
-const POSTS_PER_PAGE = 1;
+const POSTS_PER_PAGE = 3;
 
 export default function BlogList({ posts }: { posts: any[] }) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -25,7 +25,7 @@ export default function BlogList({ posts }: { posts: any[] }) {
 
     return (
         <>
-            <div className="px-4 py-20 flex flex-col justify-center items-center gap-8">
+            <div className="bg-sky-100 dark:bg-neutral-800 px-4 py-20 flex flex-col justify-center items-center gap-8">
                 <h1 className="text-5xl sm:text-7xl md:text-8xl text-center">Frontend Development</h1>
 
                 <div className="max-w-lg w-full relative">
@@ -37,14 +37,14 @@ export default function BlogList({ posts }: { posts: any[] }) {
                             setSearch(e.target.value);
                             setCurrentPage(1);
                         }}
-                        className="w-full bg-zinc-50 dark:bg-zinc-800 p-4 border-2 border-zinc-300 dark:border-zinc-700 rounded-lg"
+                        className="w-full bg-neutral-100 dark:bg-zinc-800 p-4 border border-neutral-300 dark:border-neutral-700 rounded-lg focus:outline-blue-500"
                     />
                     <Search className="absolute right-4 top-1/2 -translate-y-1/2" />
                 </div>
             </div>
             <Section>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-2">
-                    {paginatedPosts.map(post => (
+                    {paginatedPosts.length !== 0 ? paginatedPosts.map(post => (
                         <Link key={post.slug} href={`/blog/${post.slug}`}>
                             <article className="overflow-clip group">
                                 <div className="overflow-hidden border rounded-lg max-h-60 min-h-60">
@@ -56,14 +56,14 @@ export default function BlogList({ posts }: { posts: any[] }) {
                                     <div>{post.author} | {post.date}</div>
                                     <div className="flex gap-4">
                                         <h2 className="text-xl sm:line-clamp-2">{post.title}</h2>
-                                        <ArrowUpRight className="shrink-0 group-hover:scale-120 group-hover:text-blue-500 transition-transform" />
+                                        <ArrowUpRight className="shrink-0 group-hover:scale-120 group-hover:text-blue-600 transition-transform" />
                                     </div>
-                                    <p className="text-zinc-500 line-clamp-3">
+                                    <p className="text-neutral-500 dark:text-neutral-400 line-clamp-3">
                                         {post.description}
                                     </p>
                                     <div className="flex gap-2">
                                         {post.categories?.map((cat: string) => (
-                                            <span key={cat} className="inline-block px-2 py-1 rounded-2xl border text-xs">
+                                            <span key={cat} className="inline-block px-2 py-1 rounded-2xl border border-neutral-500 text-xs">
                                                 {cat}
                                             </span>
                                         ))}
@@ -71,7 +71,7 @@ export default function BlogList({ posts }: { posts: any[] }) {
                                 </div>
                             </article>
                         </Link>
-                    ))}
+                    )) : <div className="min-h-[475px] text-center col-span-3 text-red-600">No Blogs Available for your search.</div>}
                 </div>
 
                 {/* Pagination */}
@@ -81,7 +81,7 @@ export default function BlogList({ posts }: { posts: any[] }) {
                             <button
                                 key={i}
                                 onClick={() => setCurrentPage(i + 1)}
-                                className={`cursor-pointer px-4 py-2 rounded-lg ${currentPage === i + 1 ? "bg-amber-500 text-white" : "bg-zinc-200 dark:bg-zinc-800"
+                                className={`cursor-pointer px-4 py-2 rounded-lg ${currentPage === i + 1 ? "bg-blue-600 text-white" : "bg-neutral-200 dark:bg-neutral-700"
                                     }`}
                             >
                                 {i + 1}

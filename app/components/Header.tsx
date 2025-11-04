@@ -31,14 +31,14 @@ const Header = () => {
                             </li>
                         ))
                     }
-                    <ThemeToggle />
+                    <li key="theme-toggle"><ThemeToggle /></li>
                 </ul>
                 <button onClick={() => setIsOpen(!isOpen)} className="block sm:hidden cursor-pointer">
                     {isOpen ? <X /> : <Menu />}
                 </button>
                 {
                     isOpen && (
-                        <ul className="absolute top-16 left-0 w-full bg-white border-t sm:hidden flex flex-col items-center gap-4 p-4">
+                        <ul className="absolute border border-neutral-300 dark:border-neutral-700 rounded-lg top-16 left-4 right-4 bg-background sm:hidden flex flex-col items-end gap-4 p-4">
                             {
                                 menuLinks.map((link) => (
                                     <li key={link.name} onClick={() => setIsOpen(false)}>
@@ -46,7 +46,7 @@ const Header = () => {
                                     </li>
                                 ))
                             }
-                            <ThemeToggle />
+                            <li key="theme-toggle"><ThemeToggle /></li>
                         </ul>
                     )
                 }
