@@ -34,7 +34,7 @@ const Header = () => {
                     }
                     <li key="theme-toggle"><ThemeToggle /></li>
                 </ul>
-                <button onClick={() => setIsOpen(!isOpen)} className="block sm:hidden cursor-pointer">
+                <button onClick={() => setIsOpen(!isOpen)} className="block sm:hidden cursor-pointer" aria-label="Toggle Menu">
                     {isOpen ? <X /> : <Menu />}
                 </button>
                 {
